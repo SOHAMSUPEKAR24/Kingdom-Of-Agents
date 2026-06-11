@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-orbitron: var(--font-orbitron), sans-serif;
+  
+  --color-void-black: #030307;
+  --color-deep-indigo: #121226;
+  --color-neon-cyan: #00f2fe;
+  --color-royal-gold: #d4af37;
+  --color-emerald-green: #10b981;
+  --color-reinforce-purple: #8b5cf6;
+  --color-gov-red: #f43f5e;
+}
+
+:root {
+  background-color: #030307;
+  color: #f1f5f9;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* Custom glow utility animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 4px rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.45);
+    border-color: rgba(245, 158, 11, 0.6);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+@keyframes border-pulse {
+  0%, 100% {
+    border-color: rgba(244, 63, 94, 0.25);
+    box-shadow: 0 0 5px rgba(244, 63, 94, 0.05);
+  }
+  50% {
+    border-color: rgba(244, 63, 94, 0.55);
+    box-shadow: 0 0 15px rgba(244, 63, 94, 0.2);
+  }
+}
+
+.animate-border-pulse {
+  animation: border-pulse 2s infinite ease-in-out;
+}
+
+/* Custom retro cyberpunk scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(3, 3, 7, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 242, 254, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 242, 254, 0.55);
+}
+
+/* Slide-up animations for cards and alerts */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* React Flow custom edge animations */
+.react-flow__edge-path {
+  stroke-dasharray: 6;
+  animation: dash-flow 0.8s linear infinite;
+}
+
+@keyframes dash-flow {
+  from {
+    stroke-dashoffset: 12;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
