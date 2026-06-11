@@ -1,0 +1,7 @@
+{
+  "name": "kingdom-of-bots",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "npx concurrently \"uvicorn app.main:app --reload --port 8000\" \"npm run dev --prefix frontend\""
+  }
+}
